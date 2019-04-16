@@ -1,0 +1,161 @@
+<html>
+<head>
+    <style>
+	    *{
+            box-sizing: border-box;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 30pt;
+        }
+
+        .column{
+            float: left;
+            width: 48%;
+            padding: 10px;
+            height: 98%;
+            border: 1px solid black;
+            margin: 1%;
+        }
+
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+        
+        td,th{
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        #inlog{
+            text-transform: capitalize;
+            text-align: right;
+            width: 150px;
+            position: absolute;
+            margin-right: 1%;
+            margin-left: 86.75%;
+        }
+
+        th.eerste{
+            text-align: left;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            }
+  </style>
+
+  <script>
+    function deMaaltijd(){
+        var lunch1 = {
+            datum : "15-04-2019",
+            weekdag : "Maandag",
+            beoordeling : "7"
+        };
+        var lunch2 = {
+            datum : "16-04-2019",
+            weekdag : "Dinsdag",
+            beoordeling : "4"
+        };
+        var lunch3 = {
+            datum : "17-04-2019",
+            weekdag : "Woensdag",
+            beoordeling : "6"
+        };
+        var maaltijden = [lunch1, lunch2, lunch3];
+            return maaltijden;
+        }
+    function array(){
+        var lunches = deMaaltijd();
+        var text = "";
+        var y;
+        var table;
+        for(y=0; y<lunches.length; y++){
+            table = document.getElementById("weekoverzicht");
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            cell1.innerHTML = lunches[y].datum; 
+            var cell2 = row.insertCell(-1);
+            cell2.innerHTML = lunches[y].weekdag;
+            var cell3 = row.insertCell(-1);
+            cell3.innerHTML = lunches[y].beoordeling; 
+        }
+    }
+
+    function beoordeel(){
+        var cijfergeven = document.getElementById("cijfer").value;
+        document.getElementById("uitkomst").innerHTML = "Jouw cijfer: " + cijfergeven + " Bedankt voor het doorgeven!";
+    }
+
+  </script>
+</head>
+<body>
+    <div id="inlog">
+        <p>Naam recensent</p>
+        <p><a href="Lunch@LeidseVolkshuis_catering.html">Ga naar pagina voor Catering</a></p>
+    </div>
+    <h1>Lunch @ Leidse Volkshuis</h1>
+    <div class="row">
+    <div class="column">
+        <h2>Beoordeel jouw lunch</h2>	
+        <p>Details lunch</p>
+        <table>
+            <tr>
+                <th class=eerste>Aantal broodjes</th>
+                <td>"5"</th>
+            </tr>
+            <tr>
+                <th class=eerste>Beleg</th>
+                <td> Kaas, Ham, Tonijn</th>
+            </tr>
+            <tr>
+                <th class=eerste>Drankjes</th>
+                <td>Melk, Water, Thee</th>
+            </tr>
+            <tr>
+                <th class=eerste>Extra`s</th>
+                <td>Chocolade</th>
+            </tr>
+        </table>
+            <p>Cijfer: <select id="cijfer">             <!--Ik heb dit tussen p-tags geplaatst, stond nergens tussen.-->
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select> </p>
+        <button onclick="beoordeel()">Opslaan</button> <br>
+        <div id="uitkomst" > </div>
+    </div>
+    <div class="column">
+        <table id="weekoverzicht">                                  <!--Deze ID wordt 2x gebruikt-->
+            <tr>
+                <th>Datum</th>
+                <th>Weekdag</th>
+                <th>Beoordeling</th>
+            </tr>
+        </table>
+        <table id="weekoverzicht">                                  <!--Deze ID wordt 2x gebruikt-->
+            <tr>
+                <th>Datum</th>
+                <th>Weekdag</th>
+                <th>Beoordeling</th>
+            </tr>
+        </table>
+    <br>
+    <button onclick="array()">Klik</button>
+        </div>
+        
+    </div>
+</body>
+</html>

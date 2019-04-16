@@ -1,0 +1,142 @@
+<html>
+<head>
+    <style>
+	    *{
+            box-sizing: border-box;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 30pt;
+        }
+
+        .column{
+            float: left;
+            width: 48%;
+            padding: 10px;
+            height: 98%;
+            border: 1px solid black;
+            margin: 1%;
+        }
+
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+        
+        td,th{
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        #inlog{
+            text-transform: capitalize;
+            text-align: right;
+            width: 150px;
+            position: absolute;
+            margin-right: 1%;
+            margin-left: 86.75%;
+        }
+
+        input{
+            position: absolute;
+            width: 300px;
+            left: 150px;
+        }
+    </style>
+
+    <script>
+        function deMaaltijd(){
+            var lunch1 = {
+                datum : "15-04-2019",
+                weekdag : "Maandag",
+                beoordeling : "7"
+            };
+            var lunch2 = {
+                datum : "16-04-2019",
+                weekdag : "Dinsdag",
+                beoordeling : "4"
+            };
+            var lunch3 = {
+                datum : "17-04-2019",
+                    weekdag : "Woensdag",
+                    beoordeling : "6"
+                };
+            var maaltijden = [lunch1, lunch2, lunch3];
+                return maaltijden;
+            }
+            function array(){
+                var lunches = deMaaltijd();
+                var text = "";
+                var y;
+                var table;
+                for(y=0; y<lunches.length; y++){
+                    table = document.getElementById("Weekoverzicht");
+                    var row = table.insertRow(1);
+                    var cell1 = row.insertCell(0);
+                    cell1.innerHTML = lunches[y].datum; 
+                    var cell2 = row.insertCell(-1);
+                    cell2.innerHTML = lunches[y].weekdag;
+                    var cell3 = row.insertCell(-1);
+                    cell3.innerHTML = lunches[y].beoordeling; 
+                }
+            }
+  </script>
+</head>
+<body>
+    <div id="inlog">
+        <p>Naam catering</p>
+        <p><a href="Lunch@LeidseVolkshuis_recensent.html">Ga naar pagina voor recensenten</a></p>
+    </div>
+    <h1>Lunch @ Leidse Volkshuis</h1>
+    <div class="row">
+        <div class="column">
+            <div class="bg">
+                <h2>Yelp</h2>
+                <p>Geef een omschrijving van de volgende onderdelen van de lunch:</p>
+                <form action="/action_page.php" target="_self">
+                Cateraar: <input type="text" id="lunch" placeholder="Brownies & Downies">
+    <br>
+                Aantal broodjes: <input type="number" min=0 id="lunch" placeholder="Aantal broodjes">
+    <br>
+                Soorten beleg: <input type="text" id="lunch" placeholder="Ham, Kaas, Zalm">
+    <br>
+                Drankjes: <input type="text" id="lunch" placeholder="Melk, Sap">
+    <br>
+                Type bestek: <input type="text" id="lunch" placeholder="Hout, plastic">
+    <br>
+                Extra's: <input type="text" id="lunch" placeholder="chocolade, nootjes">
+    <br>
+                Datum: <input type="date" id="lunch" placeholder="12/01/2019">
+    <br>
+    <br>
+                <button type="submit" onfocus="this.value=''">Lunch opslaan</button>
+                </form>
+            </div>
+        </div>
+        <div class="column">
+            <table id="Weekoverzicht">
+                <tr>
+                    <th>Datum</th>
+                    <th>Weekdag</th>
+                    <th>Beoordeling</th>
+                </tr>
+            </table>
+            <table id="Weekoverzicht">
+                <tr>
+                    <th>Datum</th>
+                    <th>Weekdag</th>
+                    <th>Beoordeling</th>
+                </tr>
+            </table>
+    <br>
+            <button onclick="array()">Klik</button>
+        </div>
+    </div>
+</body>
+</html>
