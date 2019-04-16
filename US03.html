@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<style>
+            th.eerste{
+                text-align: left;
+                font-weight: bold;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+
+            }
+		</style>
+		<script>
+			function beoordeel(){
+                var cijfergeven = document.getElementById("cijfer").value;
+				document.getElementById("uitkomst").innerHTML = "Jouw cijfer: " + cijfergeven + " Bedankt voor het doorgeven!";
+			}
+		</script>
+	</head>
+	<body>
+    <h2>Beoordeel jouw lunch</h2>	
+    
+    Details lunch
+    <table>
+        <tr>
+            <th class=eerste>Aantal broodjes</th>
+            <th>"5"</th>
+        </tr>
+        <tr>
+            <th class=eerste>Beleg</th>
+            <th> Kaas, Ham, Tonijn</th>
+        </tr>
+        <tr>
+            <th class=eerste>Drankjes</th>
+            <th>Melk, Water, Thee</th>
+        </tr>
+        <tr>
+            <th class=eerste>Extra`s</th>
+            <th>Chocolade</th>
+        </tr>
+    </table> <br>
+
+       Cijfer: <select id="cijfer">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select> <br>
+        <button onclick=beoordeel() > Save </button> <br>
+		<div id="uitkomst" > </div>
+	</body>
+</html>
+
