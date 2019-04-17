@@ -1,3 +1,36 @@
+
+
+function etenladen(){
+    alert();
+    var dag1 = {
+        naamcateraar: document.getElementById("cateraar").value,
+        aantalbroodjes: document.getElementById("aantalBroodjes").value,
+        soortbeleg: document.getElementById("soortBeleg").value,
+        drank: document.getElementById("dranken").value,
+        bestek: document.getElementById("typeBestek").value,
+        extra: document.getElementById("extra").value,
+        datum: document.getElementById("datum").value
+    }
+    maaltijden.push(dag1);
+    console.log(maaltijden);
+    var eindString = "";
+    for(var x = 0; x < maaltijden.length; x ++){
+        eindString += "<tr><td>" + maaltijden[x].naamcateraar + "</td><td>" + 
+                            maaltijden[x].aantalbroodjes + "</td><td>" + 
+                            maaltijden[x].soortbeleg + "</td><td>" + 
+                            maaltijden[x].drank + "</td><td>" + 
+                            maaltijden[x].bestek + "</td><td>" + 
+                            maaltijden[x].extra + "</td><td>" + 
+                            maaltijden[x].datum + "</td></tr>";
+    }
+    document.getElementById("deLunch").innerHTML = eindString;
+    var maaltijdenjson = JSON.stringify(maaltijden);
+    localStorage.setItem('maaltijdenarray', maaltijdenjson);
+}
+
+var maaltijden = [];
+
+
 function deMaaltijd(){
         var lunch1 = {
             datum : "15-04-2019",
@@ -17,6 +50,7 @@ function deMaaltijd(){
         var maaltijden = [lunch1, lunch2, lunch3];
             return maaltijden;
         }
+        
     function array(){
         var lunches = deMaaltijd();
         var text = "";
@@ -39,40 +73,23 @@ function deMaaltijd(){
         document.getElementById("uitkomst").innerHTML = "Jouw cijfer: " + cijfergeven + " Bedankt voor het doorgeven!";
     }
 
-    function opslaan(hey){
-        var cateraar = document.getElementById("cateraar").value;
-            document.getElementById("werkthet").innerHTML = cateraar;
-            localStorage.setItem("naamcateraar", cateraar);
-        var aantalBroodjes = document.getElementById("aantalBroodjes").value;
-            localStorage.setItem("aantalbroodjes", aantalBroodjes);
-        var soortBeleg = document.getElementById("soortBeleg").value;
-            localStorage.setItem("soortbeleg", soortBeleg);
-        var drank = document.getElementById("dranken").value;
-            localStorage.setItem("drank", drank);
-        var bestek = document.getElementById("typeBestek").value;
-            localStorage.setItem("bestek", bestek);
-        var extra = document.getElementById("extra").value;
-            localStorage.setItem("extra", extra);
-        var datum = document.getElementById("datum").value;
-            localStorage.setItem("datum", datum);
-        alert("Cateraar: " + cateraar + "\nAantal broodjes: " + aantalBroodjes + 
-                "\nBeleg: " + soortBeleg + "\nDranken: " + drank + "\nType bestek: " + 
-                    bestek + "\nExtra: " + extra + "\nDatum: " + datum);
+    function previewLunchFoto(event){
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+        }
+    reader.readAsDataURL(event.target.files[0]);
     }
 
-    function probeersel(){
-        var cateraar = localStorage.getItem("naamcateraar");
-        var hoeveelheidbroodjes = localStorage.getItem("aantalBroodjes");
-        document.getElementById("jojojo").innerHTML = cateraar + " " + hoeveelheidbroodjes;
-    }
+function geefAantalBroodjes(){
+    var aantalBroodjes = localStorage.getItem('');
+    document.getElementById("aantalbroodjes").innerHTML;
+}
 
-    var dag1 = {
-        naamcateraar: "McDonalds",
-        aantalbroodjes: 10,
-        soortbeleg: "vlees, veggie, vis",
-        drank: "coca cola, sinas",
-        bestek: "plastic",
-        extra: "McFlurry",
-        datum: "15/04/2019"
+window.onload = function(){
+    var m = localStorage.getItem('maaltijdenarray');
+    if(m != undefined){
+        maaltijden = JSON.parse(m);
     }
-
+}

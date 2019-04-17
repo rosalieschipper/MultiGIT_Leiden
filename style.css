@@ -1,6 +1,17 @@
 	    *{
             box-sizing: border-box;
+            
         }
+
+        body{
+            background-image: url("background.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+
+        
 
         h1{
             text-align: center;
@@ -11,9 +22,12 @@
             float: left;
             width: 48%;
             padding: 10px;
-            height: 98%;
+            height: 860px;
             border: 1px solid black;
             margin: 1%;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            background-color: #f3f5f0;
+            opacity: 0.9;
         }
 
         .row:after{
@@ -24,6 +38,7 @@
 
     table{
         border-collapse: collapse;
+        background-color: #dac292;
     }
         
     td,th{
@@ -54,8 +69,21 @@
     }
 
 
-    input{
+    .inputformulier{
         position: absolute;
         width: 300px;
         left: 150px;
     }
+
+    #inputfoto{
+        position: absolute;
+    }
+
+    #output_image{
+        width: 200px;
+        height: 200px;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    

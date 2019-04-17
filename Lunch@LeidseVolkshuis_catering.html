@@ -15,23 +15,22 @@
                 <h2>Yelp</h2>
                 <p>Geef een omschrijving van de volgende onderdelen van de lunch:</p>
                 <form target="_self">
-                        Cateraar: <input type="text" id="cateraar" placeholder="Brownies & Downies"><br>
-                        Aantal broodjes: <input type="number" min=0 id="aantalBroodjes" placeholder="Aantal broodjes"><br>
-                        Soorten beleg: <input type="text" id="soortBeleg" placeholder="Ham, Kaas, Zalm"><br>
-                        Drankjes: <input type="text" id="dranken" placeholder="Melk, Sap"><br>
-                        Type bestek: <input type="text" id="typeBestek" placeholder="Hout, plastic"><br>
-                        Extra's: <input type="text" id="extra" placeholder="chocolade, nootjes"><br>
-                        Datum: <input type="date" id="datum" placeholder="12/01/2019"><br>
+                        Cateraar: <input class="inputformulier" type="text" id="cateraar" placeholder="Brownies & Downies"><br>
+                        Aantal broodjes: <input class="inputformulier" type="number" min=0 id="aantalBroodjes" placeholder="Aantal broodjes"><br>
+                        Soorten beleg: <input  class="inputformulier" type="text" id="soortBeleg" placeholder="Ham, Kaas, Zalm"><br>
+                        Drankjes: <input class="inputformulier" type="text" id="dranken" placeholder="Melk, Sap"><br>
+                        Type bestek: <input class="inputformulier" type="text" id="typeBestek" placeholder="Hout, plastic"><br>
+                        Extra's: <input class="inputformulier" type="text" id="extra" placeholder="chocolade, nootjes"><br>
+                        Datum: <input class="inputformulier" type="date" id="datum" placeholder="12/01/2019"><br>
                         <br>
-                        <button type="submit" onclick="opslaan()">Lunch opslaan</button>
-                        <button onclick="probeersel()">KLIKJES</button>
-                        <div id="werkthet">????</div>
-                        <div id="jojojo">...</div>
+                        <input type=button onclick="etenladen()" value=opslaan >
                 </form>
             </div>
+
         </div>
         <div class="column">
                 <table id="weekoverzicht">
+                    <h2>Weekoverzicht</h2>
                     <tr>
                         <th>Datum</th>
                         <th>Weekdag</th>
@@ -45,8 +44,9 @@
                 </table>
             <br>
             <button onclick="array()">Klik</button>
-            
-                </div>
+
+            <table id="deLunch">?</table>
+    </div>
     </div>
 </body>
 </html>
