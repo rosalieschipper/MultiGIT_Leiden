@@ -39,15 +39,31 @@ function deMaaltijd(){
         document.getElementById("uitkomst").innerHTML = "Jouw cijfer: " + cijfergeven + " Bedankt voor het doorgeven!";
     }
 
-    function opslaan(){
-        var lunch = document.getElementById("lunch").value;
+    function opslaan(hey){
+        var cateraar = document.getElementById("cateraar").value;
+            document.getElementById("werkthet").innerHTML = cateraar;
+            localStorage.setItem("naamcateraar", cateraar);
         var aantalBroodjes = document.getElementById("aantalBroodjes").value;
+            localStorage.setItem("aantalbroodjes", aantalBroodjes);
         var soortBeleg = document.getElementById("soortBeleg").value;
+            localStorage.setItem("soortbeleg", soortBeleg);
         var drank = document.getElementById("dranken").value;
+            localStorage.setItem("drank", drank);
         var bestek = document.getElementById("typeBestek").value;
-        var extra = document.getElementById("extra").value
+            localStorage.setItem("bestek", bestek);
+        var extra = document.getElementById("extra").value;
+            localStorage.setItem("extra", extra);
         var datum = document.getElementById("datum").value;
-        alert(  "Cateraar: " + lunch + "\nAantal broodjes: " + aantalBroodjes + "\nBeleg: " + soortBeleg + "\nDranken: " + drank + "\nType bestek: " + bestek + "\nExtra: " + extra + "\nDatum: " + datum);
+            localStorage.setItem("datum", datum);
+        alert("Cateraar: " + cateraar + "\nAantal broodjes: " + aantalBroodjes + 
+                "\nBeleg: " + soortBeleg + "\nDranken: " + drank + "\nType bestek: " + 
+                    bestek + "\nExtra: " + extra + "\nDatum: " + datum);
+    }
+
+    function probeersel(){
+        var cateraar = localStorage.getItem("naamcateraar");
+        var hoeveelheidbroodjes = localStorage.getItem("aantalBroodjes");
+        document.getElementById("jojojo").innerHTML = cateraar + " " + hoeveelheidbroodjes;
     }
 
     var dag1 = {
@@ -60,6 +76,3 @@ function deMaaltijd(){
         datum: "15/04/2019"
     }
 
-    function probeersel(){
-        alert(dag1.naamcateraar);
-    }
