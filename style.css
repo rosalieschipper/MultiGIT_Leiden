@@ -71,6 +71,13 @@ th.eerste{
     left: 150px;
 }
 
+.beoordeelformulier{
+    position: absolute;
+    width: 300px;
+    left: 150px;
+    border: 1px solid black;
+}
+
 #inputfoto{
     position: absolute;
 }
