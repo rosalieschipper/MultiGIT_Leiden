@@ -105,7 +105,7 @@ function geefdatum(){
     var jaar4 = ((jaar < 1900) ? (jaar + 1900) : (jaar));
     document.getElementById("datumdiv").innerHTML = dag2 + "-" + maand2 + "-" + jaar4;
 }
-function tabel(){
+/*function tabel(){
     var body = document.getElementsByTagName("body")[0];
     var tabel = document.createElement("table");
     var tabelBody = document.createElement("tbody");
@@ -123,4 +123,4 @@ function tabel(){
     tabel.appendChild(tabelBody);
     body.appendChild(tabel);
     tabel.setAttribute("border", "2");
-}
+}*/
