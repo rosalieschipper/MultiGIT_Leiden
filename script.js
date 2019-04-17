@@ -1,7 +1,14 @@
+window.onload = function(){
+    var m = localStorage.getItem('maaltijdenarray');
+    if(m !== undefined){
+        maaltijden = JSON.parse(m);
+    }
+}
+
 
 
 function etenladen(){
-    alert();
+    
     var dag1 = {
         naamcateraar: document.getElementById("cateraar").value,
         aantalbroodjes: document.getElementById("aantalBroodjes").value,
@@ -11,6 +18,7 @@ function etenladen(){
         extra: document.getElementById("extra").value,
         datum: document.getElementById("datum").value
     }
+    alert(dag1.naamcateraar);
     maaltijden.push(dag1);
     console.log(maaltijden);
     var eindString = "";
@@ -51,7 +59,7 @@ function deMaaltijd(){
             return maaltijden;
         }
         
-    function array(){
+function array(){
         var lunches = deMaaltijd();
         var text = "";
         var y;
@@ -68,17 +76,17 @@ function deMaaltijd(){
         }
     }
 
-    function beoordeel(){
-        var cijfergeven = document.getElementById("cijfer").value;
-        document.getElementById("uitkomst").innerHTML = "Jouw cijfer: " + cijfergeven + " Bedankt voor het doorgeven!";
+function beoordeel(){
+    var cijfergeven = document.getElementById("cijfer").value;
+    document.getElementById("uitkomst").innerHTML = "Jouw cijfer: " + cijfergeven + " Bedankt voor het doorgeven!";
     }
 
-    function previewLunchFoto(event){
-        var reader = new FileReader();
-        reader.onload = function(){
-            var output = document.getElementById('output_image');
-            output.src = reader.result;
-        }
+function previewLunchFoto(event){
+    var reader = new FileReader();
+    reader.onload = function(){
+        var output = document.getElementById('output_image');
+        output.src = reader.result;
+    }
     reader.readAsDataURL(event.target.files[0]);
     }
 
@@ -87,9 +95,13 @@ function geefAantalBroodjes(){
     document.getElementById("aantalbroodjes").innerHTML;
 }
 
-window.onload = function(){
-    var m = localStorage.getItem('maaltijdenarray');
-    if(m != undefined){
-        maaltijden = JSON.parse(m);
-    }
+function geefdatum(){
+    var vandaag = new Date();
+    var dag = vandaag.getDate();
+    var dag2 = ((dag < 10) ? "0" : "") + dag;
+    var maand = vandaag.getMonth() + 1;
+    var maand2 = ((maand < 10) ? "0" : "") + maand;
+    var jaar = vandaag.getYear();
+    var jaar4 = ((jaar < 1900) ? (jaar + 1900) : (jaar));
+    document.getElementById("datumdiv").innerHTML = dag2 + "-" + maand2 + "-" + jaar4;
 }

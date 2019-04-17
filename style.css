@@ -1,89 +1,90 @@
-	    *{
-            box-sizing: border-box;
-            
-        }
+*{
+    box-sizing: border-box;
+}
 
-        body{
-            background-image: url("background.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100%;
-        }
+body{
+    background-image: url("background.jpg");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+}
 
+h1{
+    text-align: center;
+    font-size: 30pt;
+}
+
+.column{
+    float: left;
+    width: 48%;
+    padding: 10px;
+    margin: 1%;
+    background-color: #f3f5f0;
+    opacity: 0.9;
+    height: auto;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+table{
+    border-collapse: collapse;
+    background-color: #e7ebe0;
+}
         
+td,th{
+    border: 1px solid black;
+    padding: 5px;
+}
 
-        h1{
-            text-align: center;
-            font-size: 30pt;
-        }
+#inlog{
+    text-transform: capitalize;
+    text-align: right;
+    width: 150px;
+    position: absolute;
+    margin-right: 1%;
+    margin-left: 86.75%;
+}
 
-        .column{
-            float: left;
-            width: 48%;
-            padding: 10px;
-            height: 860px;
-            border: 1px solid black;
-            margin: 1%;
-            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-            background-color: #f3f5f0;
-            opacity: 0.9;
-        }
+#datumdiv{
+    text-align: right;
+    margin-right: 1%;
+    padding: 2px;
+    margin-left: 79%;
+}
 
-        .row:after{
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-    table{
-        border-collapse: collapse;
-        background-color: #dac292;
-    }
-        
-    td,th{
-        border: 1px solid black;
-        padding: 5px;
-    }
-
-    #inlog{
-        text-transform: capitalize;
-        text-align: right;
-        width: 150px;
-        position: absolute;
-        margin-right: 1%;
-        margin-left: 86.75%;
-    }
-
-    #datumdiv{
-        text-align: right;
-        margin-right: 1%;
-        padding: 2px;
-        margin-left: 79%;
-    }
-
-    th.eerste{
-        text-align: left;
-        border-bottom: 1px solid black;
-        border-right: 1px solid black;
-    }
+th.eerste{
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
 
 
-    .inputformulier{
-        position: absolute;
-        width: 300px;
-        left: 150px;
-    }
+.inputformulier{
+    position: absolute;
+    width: 300px;
+    left: 150px;
+}
 
-    #inputfoto{
-        position: absolute;
-    }
+#inputfoto{
+    position: absolute;
+}
 
-    #output_image{
-        width: 200px;
-        height: 200px;
-        margin-left: 50px;
-        margin-top: 50px;
-    }
+#output_image{
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
 
-    
+#imagebox{
+    display: flex;
+    width: 50%;
+    background-color: blue;
+    position: right;
+}

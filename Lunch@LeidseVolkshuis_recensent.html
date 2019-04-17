@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
+<body onload="geefdatum()">
     <div id="inlog">
         <p>Naam recensent</p>
         <p><a href="Lunch@LeidseVolkshuis_catering.html">Ga naar pagina voor Catering</a></p>
@@ -11,77 +11,73 @@
     <h1>Lunch @ Leidse Volkshuis</h1>
     <div class="row">
     <div class="column">
-        <div id="datumdiv">DATUM + DAG</div>
-        <h2>Beoordeel jouw lunch</h2>	
-        <p>Details lunch</p>
-        <p><table>
-            <tr>
-                <th class=eerste>Aantal broodjes</th>
-                <td id="aantalbroodjes">"5"</th>
-            </tr>
-            <tr>
-                <th class=eerste>Beleg</th>
-                <td> Kaas, Ham, Tonijn</th>
-            </tr>
-            <tr>
-                <th class=eerste>Drankjes</th>
-                <td>Melk, Water, Thee</th>
-            </tr>
-            <tr>
-                <th class=eerste>Extra`s</th>
-                <td>Chocolade</th>
-                </tr>
-        </table></p>
-        <table id="deLunch" onload="etenladen()">?</table>
-        <input type=button onclick="etenladen()" value=opslaan >
-        
-        <input id="inputfoto" type="file" accept="image/*" onchange="previewLunchFoto(event)">
-        <img id="output_image"/>
-        
-        <br/> <br/>
-        Commentaar<br/>
-        <textarea rows=10 cols=60 id="commentaar"></textarea>
-        <br/><br/><br/>
-            <p>Cijfer: <select id="cijfer">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select> </p>
+        <div id="datumdiv"></div>
+            <h2>Beoordeel jouw lunch</h2>	
+            <p>Details lunch</p>
+            <p>
+                <table>
+                    <tr>
+                        <th class=eerste>Aantal broodjes</th>
+                        <td id="aantalbroodjes">"5"</th>
+                    </tr>
+                    <tr>
+                        <th class=eerste>Beleg</th>
+                        <td> Kaas, Ham, Tonijn</th>
+                    </tr>
+                    <tr>
+                        <th class=eerste>Drankjes</th>
+                        <td>Melk, Water, Thee</th>
+                    </tr>
+                    <tr>
+                        <th class=eerste>Extra`s</th>
+                        <td>Chocolade</th>
+                    </tr>
+                </table>
+            </p>
+        <div class="row">
+            <div class="column"><input id="inputfoto" type="file" accept="image/*" onchange="previewLunchFoto(event)">
+            <img id="output_image"/></div>
+            <div class="column">Commentaar<br/>
+                <textarea rows=15 cols=35 id="commentaar"></textarea></div>
+        </div>        
 
-            
+        <p>Cijfer:
+        <select id="cijfer">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        </p>
+        
         <button onclick="beoordeel()">Opslaan</button>
 
-        
     <br>
-        <div id="uitkomst" > </div>
-    </div>
-    <div class="column">
-        <table id="weekoverzicht">
-            <h2>Weekoverzicht</h2>
-            <tr>
-                <th>Datum</th>
-                <th>Weekdag</th>
-                <th>Beoordeling</th>
-            </tr>
-            <tr>
-                <td>15-04-2019</td>
-                <td>maandag</td>
-                <td>GEMIDDELD</td>
-            </tr>
-        </table>
-    <br>
-    <button onclick="array()">Klik</button>
-
-    <div id="deLunch">?</div>
+    <div id="uitkomst" > </div>
         </div>
-        
+            <div class="column">
+                <h2>Weekoverzicht</h2>
+                <table id="weekoverzicht">
+                    <tr>
+                        <th>Datum</th>
+                        <th>Weekdag</th>
+                        <th>Beoordeling</th>
+                    </tr>
+                    <tr>
+                        <td>15-04-2019</td>
+                        <td>maandag</td>
+                        <td>GEMIDDELD</td>
+                    </tr>
+                </table>
+            <br>
+            <button onclick="array()">Klik</button>
+        </div>
     </div>
 </body>
 </html>
