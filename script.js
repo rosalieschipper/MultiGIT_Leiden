@@ -1,3 +1,44 @@
+window.onload = function(){
+    var m = localStorage.getItem('maaltijdenarray');
+    if(m !== undefined){
+        maaltijden = JSON.parse(m);
+    }
+}
+
+
+
+function etenladen(){
+    
+    var dag1 = {
+        naamcateraar: document.getElementById("cateraar").value,
+        aantalbroodjes: document.getElementById("aantalBroodjes").value,
+        soortbeleg: document.getElementById("soortBeleg").value,
+        drank: document.getElementById("dranken").value,
+        bestek: document.getElementById("typeBestek").value,
+        extra: document.getElementById("extra").value,
+        datum: document.getElementById("datum").value
+    }
+    alert(dag1.naamcateraar);
+    maaltijden.push(dag1);
+    console.log(maaltijden);
+    var eindString = "";
+    for(var x = 0; x < maaltijden.length; x ++){
+        eindString += "<tr><td>" + maaltijden[x].naamcateraar + "</td><td>" + 
+                            maaltijden[x].aantalbroodjes + "</td><td>" + 
+                            maaltijden[x].soortbeleg + "</td><td>" + 
+                            maaltijden[x].drank + "</td><td>" + 
+                            maaltijden[x].bestek + "</td><td>" + 
+                            maaltijden[x].extra + "</td><td>" + 
+                            maaltijden[x].datum + "</td></tr>";
+    }
+    document.getElementById("deLunch").innerHTML = eindString;
+    var maaltijdenjson = JSON.stringify(maaltijden);
+    localStorage.setItem('maaltijdenarray', maaltijdenjson);
+}
+
+var maaltijden = [];
+
+
 function deMaaltijd(){
         var lunch1 = {
             datum : "15-04-2019",
@@ -17,7 +58,8 @@ function deMaaltijd(){
         var maaltijden = [lunch1, lunch2, lunch3];
             return maaltijden;
         }
-    function array(){
+        
+function array(){
         var lunches = deMaaltijd();
         var text = "";
         var y;
@@ -34,34 +76,51 @@ function deMaaltijd(){
         }
     }
 
-    function beoordeel(){
-        var cijfergeven = document.getElementById("cijfer").value;
-     //   var commentaar = document.getElementById("commentaar").value;         HIER WORDT HET COMMENTAAR OPGEHAALD
-        document.getElementById("uitkomst").innerHTML = "Jouw cijfer: " + cijfergeven + " Bedankt voor het doorgeven!";
-     //   alert(commentaar);         EN DE ALERT VOOR HET COMMENTAAR
+function beoordeel(){
+    var cijfergeven = document.getElementById("cijfer").value;
+    document.getElementById("uitkomst").innerHTML = "Jouw cijfer: " + cijfergeven + " Bedankt voor het doorgeven!";
     }
 
-    function opslaan(){
-        var lunch = document.getElementById("lunch").value;
-        var aantalBroodjes = document.getElementById("aantalBroodjes").value;
-        var soortBeleg = document.getElementById("soortBeleg").value;
-        var drank = document.getElementById("dranken").value;
-        var bestek = document.getElementById("typeBestek").value;
-        var extra = document.getElementById("extra").value
-        var datum = document.getElementById("datum").value;
-        alert(  "Cateraar: " + lunch + "\nAantal broodjes: " + aantalBroodjes + "\nBeleg: " + soortBeleg + "\nDranken: " + drank + "\nType bestek: " + bestek + "\nExtra: " + extra + "\nDatum: " + datum);
+function previewLunchFoto(event){
+    var reader = new FileReader();
+    reader.onload = function(){
+        var output = document.getElementById('output_image');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
     }
 
-    var dag1 = {
-        naamcateraar: "McDonalds",
-        aantalbroodjes: 10,
-        soortbeleg: "vlees, veggie, vis",
-        drank: "coca cola, sinas",
-        bestek: "plastic",
-        extra: "McFlurry",
-        datum: "15/04/2019"
-    }
+function geefAantalBroodjes(){
+    var aantalBroodjes = localStorage.getItem('');
+    document.getElementById("aantalbroodjes").innerHTML;
+}
 
-    function probeersel(){
-        alert(dag1.naamcateraar);
+function geefdatum(){
+    var vandaag = new Date();
+    var dag = vandaag.getDate();
+    var dag2 = ((dag < 10) ? "0" : "") + dag;
+    var maand = vandaag.getMonth() + 1;
+    var maand2 = ((maand < 10) ? "0" : "") + maand;
+    var jaar = vandaag.getYear();
+    var jaar4 = ((jaar < 1900) ? (jaar + 1900) : (jaar));
+    document.getElementById("datumdiv").innerHTML = dag2 + "-" + maand2 + "-" + jaar4;
+}
+function tabel(){
+    var body = document.getElementsByTagName("body")[0];
+    var tabel = document.createElement("table");
+    var tabelBody = document.createElement("tbody");
+
+    for (var r=0 ; r < 4 ; r++){
+        var rij = document.createElement("tr");
+        for (c=0 ; c < 3 ; c++){
+            var cell = document.createElement("td");
+            var tekst = document.createTextNode("test");
+            cell.appendChild(tekst);
+            rij.appendChild(cell);
+        }
+        tabelBody.appendChild(rij);
     }
+    tabel.appendChild(tabelBody);
+    body.appendChild(tabel);
+    tabel.setAttribute("border", "2");
+}
