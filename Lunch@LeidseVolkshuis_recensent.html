@@ -3,9 +3,12 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body onload="geefdatum()">
+<body>
     <div id="inlog">
-        <p>Naam recensent</p>
+        <input id= "inputnaam" type="text" placeholder="Gebruikersnaam"></input> <!--INLOG NIEUW-->
+        <button onclick=naamOpslaan()> Inloggen </button> <!--INLOG NIEUW-->
+    <br>
+        <div id=uitkomstGebruiker> Gebruikersnaam </div> <!--INLOG NIEUW-->
         <p><a href="Lunch@LeidseVolkshuis_catering.html">Ga naar pagina voor Catering</a></p>
     </div>
     <h1>Lunch @ Leidse Volkshuis</h1>
@@ -59,6 +62,9 @@
                     </tr>
                 </table>
             </p>
+
+            <button id="blabla" onclick="etenophalen()">Toon menu</button>
+            <table id="deLunch"></table>
         <div class="row">
             <div class="column"><input id="inputfoto" type="file" accept="image/*" onchange="previewLunchFoto(event)">
             <img id="output_image"/></div>

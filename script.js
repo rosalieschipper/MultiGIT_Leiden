@@ -1,14 +1,23 @@
 window.onload = function(){
+    geefdatum();
+    
+    document.getElementById("uitkomstGebruiker").innerHTML = localStorage.getItem("deNaam"); //INLOG NIEUW
     var m = localStorage.getItem('maaltijdenarray');
+    //alert(m);
     if(m !== undefined){
         maaltijden = JSON.parse(m);
     }
 }
 
+function naamOpslaan(){ //INLOG NIEUW
+    var invoerGebruiker = document.getElementById("inputnaam").value;
+    document.getElementById("uitkomstGebruiker").innerHTML = invoerGebruiker;
+    localStorage.setItem("deNaam", invoerGebruiker);
+    var ophalen = localStorage.getItem("deNaam");
+    document.getElementById("uitkomstGebruiker").innerHTML = ophalen;
+}
 
-
-function etenladen(){
-    
+/*function etenladen(){
     var dag1 = {
         naamcateraar: document.getElementById("cateraar").value,
         aantalbroodjes: document.getElementById("aantalBroodjes").value,
@@ -18,7 +27,7 @@ function etenladen(){
         extra: document.getElementById("extra").value,
         datum: document.getElementById("datum").value
     }
-    alert(dag1.naamcateraar);
+    //alert(dag1.naamcateraar);
     maaltijden.push(dag1);
     console.log(maaltijden);
     var eindString = "";
@@ -32,12 +41,50 @@ function etenladen(){
                             maaltijden[x].datum + "</td></tr>";
     }
     document.getElementById("deLunch").innerHTML = eindString;
+    //alert("string: " + eindString);
+    var maaltijdenjson = JSON.stringify(maaltijden);
+    localStorage.setItem('maaltijdenarray', maaltijdenjson);
+}*/
+
+function inputeten(){
+    var dag1 = {
+        naamcateraar: document.getElementById("cateraar").value,
+        aantalbroodjes: document.getElementById("aantalBroodjes").value,
+        soortbeleg: document.getElementById("soortBeleg").value,
+        drank: document.getElementById("dranken").value,
+        bestek: document.getElementById("typeBestek").value,
+        extra: document.getElementById("extra").value,
+        datum: document.getElementById("datum").value
+    }
+    maaltijden.push(dag1);
+    document.getElementById("deLunch").innerHTML = tabelmaaltijdenmaken(maaltijden);
+}
+
+function maakmaaltijdstring(maaltijdenarray, maaltijdenjson){
     var maaltijdenjson = JSON.stringify(maaltijden);
     localStorage.setItem('maaltijdenarray', maaltijdenjson);
 }
 
-var maaltijden = [];
+function tabelmaaltijdenmaken(maaltijden){
+    var eindString = "";
+    for(var x = 0; x < maaltijden.length; x ++){
+        eindString += "<tr><td>" + maaltijden[x].naamcateraar + "</td><td>" + 
+                            maaltijden[x].aantalbroodjes + "</td><td>" + 
+                            maaltijden[x].soortbeleg + "</td><td>" + 
+                            maaltijden[x].drank + "</td><td>" + 
+                            maaltijden[x].bestek + "</td><td>" + 
+                            maaltijden[x].extra + "</td><td>" + 
+                            maaltijden[x].datum + "</td></tr>";
+    }
+    return eindString;
+}
 
+function etenophalen(){
+    document.getElementById("deLunch").innerHTML = tabelmaaltijdenmaken(maaltijden);
+}
+
+
+var maaltijden = [];
 
 function deMaaltijd(){
         var lunch1 = {
@@ -104,4 +151,10 @@ function geefdatum(){
     var jaar = vandaag.getYear();
     var jaar4 = ((jaar < 1900) ? (jaar + 1900) : (jaar));
     document.getElementById("datumdiv").innerHTML = dag2 + "-" + maand2 + "-" + jaar4;
+}
+
+function lala(lunchinhoud){
+    var y = localStorage.getItem("maaltijdenarray");
+    alert(y);
+    document.getElementById("deLunch").innerHTML = y;
 }
