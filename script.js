@@ -24,6 +24,10 @@ function startCateraarOverzicht(){
  //   gezamelijkePaginaStart();
  //   alert("in startCateraar");
     vulCateraarDropDown();
+   // alert();
+    lala();
+   maaltijden = JSON.parse(localStorage.getItem("maaltijdenarray"));
+  //  document.getElementById("deLunch").innerHTML = tabelmaaltijdenmaken(y);
 }
 
 function vulCateraarDropDown(){
@@ -34,6 +38,10 @@ function vulCateraarDropDown(){
         eindString += "<option>"+ cateraarsObject[x].Naam +"</option>";
     }
     document.getElementById("lunchMan").innerHTML = eindString;
+
+
+
+
 }
 
 function startRecencentOverzicht(){
@@ -42,6 +50,8 @@ function startRecencentOverzicht(){
     if(m !== undefined){
         maaltijden = JSON.parse(m);
     }
+    lala();
+    maaltijden = JSON.parse(localStorage.getItem("maaltijdenarray"));
 }
 
 /*function etenladen(){
@@ -75,7 +85,7 @@ function startRecencentOverzicht(){
 
 function inputeten(){
     var dag1 = {
-        naamcateraar: document.getElementById("cateraar").value,
+        naamcateraar: document.getElementById("lunchMan").value,
         aantalbroodjes: document.getElementById("aantalBroodjes").value,
         soortbeleg: document.getElementById("soortBeleg").value,
         drank: document.getElementById("dranken").value,
@@ -85,9 +95,11 @@ function inputeten(){
     }
     maaltijden.push(dag1);
     document.getElementById("deLunch").innerHTML = tabelmaaltijdenmaken(maaltijden);
+    maakmaaltijdstring();
+
 }
 
-function maakmaaltijdstring(maaltijdenarray, maaltijdenjson){
+function maakmaaltijdstring(){
     var maaltijdenjson = JSON.stringify(maaltijden);
     localStorage.setItem('maaltijdenarray', maaltijdenjson);
 }
@@ -181,9 +193,9 @@ function geefdatum(){
 }
 
 function lala(lunchinhoud){
-    var y = localStorage.getItem("maaltijdenarray");
-    alert(y);
-    document.getElementById("deLunch").innerHTML = y;
+    var y = JSON.parse(localStorage.getItem("maaltijdenarray"));
+    console.log(y);
+    document.getElementById("deLunch").innerHTML = tabelmaaltijdenmaken(y);
 }
 
 function cateraarInfo(){ //NEW
