@@ -1,0 +1,57 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="inlog">
+        <input id="inputnaam" type="text" placeholder="Naam catering"></input> <!--INLOG NIEUW-->
+        <button onclick=naamOpslaan()> Inloggen </button> <!--INLOG NIEUW-->
+    <br>
+        <div id="uitkomstGebruiker"> Naam catering </div> <!--INLOG NIEUW-->
+        <p><a href="Lunch@LeidseVolkshuis_recensent.html">Ga naar pagina voor recensenten</a></p>
+    </div>
+    <h1>Lunch @ Leidse Volkshuis</h1>
+    <div class="row">
+        <div class="column">
+                <h2>Lunchformulier</h2>
+                <p>Geef een omschrijving van de volgende onderdelen van de lunch:</p>
+                <form target="_self">
+                    Cateraar: <input class="inputformulier" type="text" id="cateraar" placeholder="Brownies & Downies">
+            <br>
+                    Aantal broodjes: <input class="inputformulier" type="number" min=0 id="aantalBroodjes" placeholder="Aantal broodjes">
+            <br>
+                    Beleg: <input  class="inputformulier" type="text" id="soortBeleg" placeholder="Ham, Kaas, Zalm">
+            <br>
+                    Drankjes: <input class="inputformulier" type="text" id="dranken" placeholder="Melk, Sap">
+            <br>
+                    Type bestek: <input class="inputformulier" type="text" id="typeBestek" placeholder="Hout, plastic">
+            <br>
+                    Extra's: <input class="inputformulier" type="text" id="extra" placeholder="chocolade, nootjes">
+            <br>
+                    Datum: <input class="inputformulier" type="date" id="datum" placeholder="12/01/2019">
+            <br><br>
+                    <input type="button" onclick="inputeten()" value=opslaan >
+                </form>
+        </div>
+        <div class="column">
+            <table id="weekoverzicht">
+                <h2>Weekoverzicht</h2>
+                <tr>
+                    <th>Datum</th>
+                    <th>Weekdag</th>
+                    <th>Beoordeling</th>
+                </tr>
+                <tr>
+                    <td>15-04-2019</td>
+                    <td>maandag</td>
+                    <td>GEMIDDELD</td>
+                    </tr>
+                </table>
+        <br>
+            <button onclick="array()">Klik</button>
+            <table id="deLunch">?</table>
+        </div>
+    </div>
+</body>
+</html>

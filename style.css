@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+h1{
+    text-align: center;
+    font-size: 30pt;
+}
+
+.column{
+    float: left;
+    width: 48%;
+    padding: 10px;
+    margin: 1%;
+    background-color: #f3f5f0;
+    opacity: 0.9;
+    height: auto;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+table{
+    border-collapse: collapse;
+    background-color: #e7ebe0;
+}
+        
+td,th{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#inlog{
+    text-transform: capitalize;
+    text-align: right;
+    width: 150px;
+    position: absolute;
+    margin-right: 1%;
+    margin-left: 86.75%;
+}
+
+#datumdiv{
+    text-align: right;
+    margin-right: 1%;
+    padding: 2px;
+    margin-left: 79%;
+}
+
+th.eerste{
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+
+.inputformulier{
+    position: absolute;
+    width: 300px;
+    left: 150px;
+}
+
+.beoordeelformulier{
+    position: absolute;
+    width: 300px;
+    left: 150px;
+    border: 1px solid black;
+}
+
+#inputfoto{
+    position: absolute;
+}
+
+#output_image{
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+#imagebox{
+    display: flex;
+    width: 50%;
+    background-color: blue;
+    position: right;
+}
