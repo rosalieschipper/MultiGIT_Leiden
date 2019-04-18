@@ -1,14 +1,34 @@
 window.onload = function(){
+<<<<<<< HEAD
     var m = localStorage.getItem('maaltijdenarray');
+========
+    geefdatum();
+    
+    document.getElementById("uitkomstGebruiker").innerHTML = localStorage.getItem("deNaam"); //INLOG NIEUW
+    var m = localStorage.getItem('maaltijdenarray');
+    //alert(m);
+>>>>>>> master
     if(m !== undefined){
         maaltijden = JSON.parse(m);
     }
 }
 
+<<<<<<< HEAD
 function 
 
 function etenladen(){
     
+=========
+function naamOpslaan(){ //INLOG NIEUW
+    var invoerGebruiker = document.getElementById("inputnaam").value;
+    document.getElementById("uitkomstGebruiker").innerHTML = invoerGebruiker;
+    localStorage.setItem("deNaam", invoerGebruiker);
+    var ophalen = localStorage.getItem("deNaam");
+    document.getElementById("uitkomstGebruiker").innerHTML = ophalen;
+}
+
+/*function etenladen(){
+>>>>>>> master
     var dag1 = {
         naamcateraar: document.getElementById("cateraar").value,
         aantalbroodjes: document.getElementById("aantalBroodjes").value,
@@ -18,7 +38,11 @@ function etenladen(){
         extra: document.getElementById("extra").value,
         datum: document.getElementById("datum").value
     }
+<<<<<<< HEAD
     alert(dag1.naamcateraar);
+========
+    //alert(dag1.naamcateraar);
+>>>>>>> master
     maaltijden.push(dag1);
     console.log(maaltijden);
     var eindString = "";
@@ -32,13 +56,60 @@ function etenladen(){
                             maaltijden[x].datum + "</td></tr>";
     }
     document.getElementById("deLunch").innerHTML = eindString;
+<<<<<<< HEAD
+========
+    //alert("string: " + eindString);
+    var maaltijdenjson = JSON.stringify(maaltijden);
+    localStorage.setItem('maaltijdenarray', maaltijdenjson);
+}*/
+
+function inputeten(){
+    var dag1 = {
+        naamcateraar: document.getElementById("cateraar").value,
+        aantalbroodjes: document.getElementById("aantalBroodjes").value,
+        soortbeleg: document.getElementById("soortBeleg").value,
+        drank: document.getElementById("dranken").value,
+        bestek: document.getElementById("typeBestek").value,
+        extra: document.getElementById("extra").value,
+        datum: document.getElementById("datum").value
+    }
+    maaltijden.push(dag1);
+    document.getElementById("deLunch").innerHTML = tabelmaaltijdenmaken(maaltijden);
+}
+
+function maakmaaltijdstring(maaltijdenarray, maaltijdenjson){
+>>>>>>> master
     var maaltijdenjson = JSON.stringify(maaltijden);
     localStorage.setItem('maaltijdenarray', maaltijdenjson);
 }
 
+<<<<<<< HEAD
 var maaltijden = [];
 
 
+========
+function tabelmaaltijdenmaken(maaltijden){
+    var eindString = "";
+    for(var x = 0; x < maaltijden.length; x ++){
+        eindString += "<tr><td>" + maaltijden[x].naamcateraar + "</td><td>" + 
+                            maaltijden[x].aantalbroodjes + "</td><td>" + 
+                            maaltijden[x].soortbeleg + "</td><td>" + 
+                            maaltijden[x].drank + "</td><td>" + 
+                            maaltijden[x].bestek + "</td><td>" + 
+                            maaltijden[x].extra + "</td><td>" + 
+                            maaltijden[x].datum + "</td></tr>";
+    }
+    return eindString;
+}
+
+function etenophalen(){
+    document.getElementById("deLunch").innerHTML = tabelmaaltijdenmaken(maaltijden);
+}
+
+
+var maaltijden = [];
+
+>>>>>>> master
 function deMaaltijd(){
         var lunch1 = {
             datum : "15-04-2019",
@@ -55,12 +126,16 @@ function deMaaltijd(){
             weekdag : "Woensdag",
             beoordeling : "6"
         };
+<<<<<<< HEAD
         var lunch4 = {
             datum : "17-04-2019",
             weekdag : "Woensdag",
             beoordeling : "6"
         };
         var maaltijden = [lunch1, lunch2, lunch3, lunch4];
+========
+        var maaltijden = [lunch1, lunch2, lunch3];
+>>>>>>> master
             return maaltijden;
         }
         
@@ -110,6 +185,7 @@ function geefdatum(){
     var jaar4 = ((jaar < 1900) ? (jaar + 1900) : (jaar));
     document.getElementById("datumdiv").innerHTML = dag2 + "-" + maand2 + "-" + jaar4;
 }
+<<<<<<< HEAD
 function tabel(){
     var body = document.getElementsByClassName("column")[0];
     var tabel = document.createElement("table");
@@ -128,4 +204,11 @@ function tabel(){
     tabel.appendChild(tabelBody);
     body.appendChild(tabel);
     tabel.setAttribute("border", "2");
+========
+
+function lala(lunchinhoud){
+    var y = localStorage.getItem("maaltijdenarray");
+    alert(y);
+    document.getElementById("deLunch").innerHTML = y;
+>>>>>>> master
 }
