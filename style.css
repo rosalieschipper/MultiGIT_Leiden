@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    font-size: 30pt;
+}
+
+.column{
+    float: left;
+    width: 48%;
+    padding: 10px;
+    height: 98%;
+    border: 1px solid black;
+    margin: 1%;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+table{
+border-collapse: collapse;
+}
+
+td,th{
+border: 1px solid black;
+padding: 5px;
+}
+
+#inlog{
+text-transform: capitalize;
+text-align: right;
+width: 150px;
+position: absolute;
+margin-right: 1%;
+margin-left: 86.75%;
+}
+
+#datumdiv{
+text-align: right;
+margin-right: 1%;
+padding: 2px;
+margin-left: 79%;
+}
+
+th.eerste{
+text-align: left;
+border-bottom: 1px solid black;
+border-right: 1px solid black;
+}
+
+
+/*input{
+position: absolute;
+width: 300px;
+left: 150px;
+}
