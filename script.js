@@ -1,3 +1,14 @@
+/*
+
+function naamOpslaan(){ //INLOG NIEUW
+    var invoerGebruiker = document.getElementById("inputnaam").value;
+    document.getElementById("uitkomstGebruiker").innerHTML = invoerGebruiker;
+    localStorage.setItem("deNaam", invoerGebruiker);
+    var ophalen = localStorage.getItem("deNaam");
+    document.getElementById("uitkomstGebruiker").innerHTML = ophalen;
+}
+*/
+/*
 window.onload = function(){
     geefdatum();
     
@@ -8,13 +19,29 @@ window.onload = function(){
         maaltijden = JSON.parse(m);
     }
 }
+*/
+function startCateraarOverzicht(){
+ //   gezamelijkePaginaStart();
+ //   alert("in startCateraar");
+    vulCateraarDropDown();
+}
 
-function naamOpslaan(){ //INLOG NIEUW
-    var invoerGebruiker = document.getElementById("inputnaam").value;
-    document.getElementById("uitkomstGebruiker").innerHTML = invoerGebruiker;
-    localStorage.setItem("deNaam", invoerGebruiker);
-    var ophalen = localStorage.getItem("deNaam");
-    document.getElementById("uitkomstGebruiker").innerHTML = ophalen;
+function vulCateraarDropDown(){
+    var cateraars = localStorage.getItem("opgeslagenCat");
+    var cateraarsObject = JSON.parse(cateraars);
+    var eindString = "";
+    for(var x = 0; x < cateraarsObject.length ; x++){
+        eindString += "<option>"+ cateraarsObject[x].Naam +"</option>";
+    }
+    document.getElementById("lunchMan").innerHTML = eindString;
+}
+
+function startRecencentOverzicht(){
+    document.getElementById("uitkomstGebruiker").innerHTML = localStorage.getItem("deNaam");
+    var m = localStorage.getItem('maaltijdenarray');
+    if(m !== undefined){
+        maaltijden = JSON.parse(m);
+    }
 }
 
 /*function etenladen(){
@@ -158,3 +185,18 @@ function lala(lunchinhoud){
     alert(y);
     document.getElementById("deLunch").innerHTML = y;
 }
+
+function cateraarInfo(){ //NEW
+    var catering = document.getElementById("cateraarNaam").value;
+    var stad = document.getElementById("cateraarStad").value;
+    var id = document.getElementById("cateraarId").value;
+    var cateraarObject = {};
+    cateraarObject.Naam = catering;
+    cateraarObject.Stad = stad;
+    cateraarObject.Id = id;
+    cateraars.push(cateraarObject);
+    var cateraarsJSON = JSON.stringify(cateraars);
+    localStorage.setItem("opgeslagenCat",cateraarsJSON);
+    console.log(cateraars);
+}
+var cateraars = []; //NEW
