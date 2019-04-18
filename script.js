@@ -5,7 +5,7 @@ window.onload = function(){
     }
 }
 
-
+function 
 
 function etenladen(){
     
@@ -55,7 +55,12 @@ function deMaaltijd(){
             weekdag : "Woensdag",
             beoordeling : "6"
         };
-        var maaltijden = [lunch1, lunch2, lunch3];
+        var lunch4 = {
+            datum : "17-04-2019",
+            weekdag : "Woensdag",
+            beoordeling : "6"
+        };
+        var maaltijden = [lunch1, lunch2, lunch3, lunch4];
             return maaltijden;
         }
         
@@ -105,8 +110,8 @@ function geefdatum(){
     var jaar4 = ((jaar < 1900) ? (jaar + 1900) : (jaar));
     document.getElementById("datumdiv").innerHTML = dag2 + "-" + maand2 + "-" + jaar4;
 }
-/*function tabel(){
-    var body = document.getElementsByTagName("body")[0];
+function tabel(){
+    var body = document.getElementsByClassName("column")[0];
     var tabel = document.createElement("table");
     var tabelBody = document.createElement("tbody");
 
@@ -123,4 +128,4 @@ function geefdatum(){
     tabel.appendChild(tabelBody);
     body.appendChild(tabel);
     tabel.setAttribute("border", "2");
-}*/
+}
