@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
+<body onload="startCateraarOverzicht()">
     <div id="inlog">
         <input id="inputnaam" type="text" placeholder="Naam catering"></input> <!--INLOG NIEUW-->
         <button onclick=naamOpslaan()> Inloggen </button> <!--INLOG NIEUW-->
@@ -14,10 +14,20 @@
     <h1>Lunch @ Leidse Volkshuis</h1>
     <div class="row">
         <div class="column">
-                <h2>Lunchformulier</h2>
-                <p>Geef een omschrijving van de volgende onderdelen van de lunch:</p>
-                <form target="_self">
-                    Cateraar: <input class="inputformulier" type="text" id="cateraar" placeholder="Brownies & Downies">
+                <div id="datumdiv"></div>
+            <h2>Lunchformulier</h2>
+            <p>Vul uw gegevens in:</p>
+            Cateraar: <input class="inputformulier" type="text" id="cateraarNaam" placeholder="Brownies & Downies">
+            <br>
+            Stad: <input class="inputformulier" type="text" id="cateraarStad" placeholder="Leiden">
+            <br>
+            Id: <input class="inputformulier" type="text" id="cateraarId" placeholder="123">
+            <br>
+            <button onclick="cateraarInfo()">Opslaan</button>
+            <p>Geef een omschrijving van de volgende onderdelen van de lunch:</p>
+            
+        <form target="_self">
+                Cateraar: <select class="inputformulier" type="text" id="lunchMan" placeholder="Brownies & Downies"></select>                       </select>
             <br>
                     Aantal broodjes: <input class="inputformulier" type="number" min=0 id="aantalBroodjes" placeholder="Aantal broodjes">
             <br>
