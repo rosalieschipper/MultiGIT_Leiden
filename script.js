@@ -17,6 +17,15 @@ function naamOpslaan(){ //INLOG NIEUW
     document.getElementById("uitkomstGebruiker").innerHTML = ophalen;
 }
 
+function startCateraarPagina(){
+    //gezamenlijkes
+}
+
+function startRecensentPagina(){
+
+}
+
+
 /*function etenladen(){
     var dag1 = {
         naamcateraar: document.getElementById("cateraar").value,
@@ -158,3 +167,18 @@ function lala(lunchinhoud){
     alert(y);
     document.getElementById("deLunch").innerHTML = y;
 }
+
+function cateraarInfo(){ //NEW
+    var catering = document.getElementById("cateraarNaam").value;
+    var stad = document.getElementById("cateraarStad").value;
+    var id = document.getElementById("cateraarId").value;
+    var cateraarObject = {};
+    cateraarObject.Naam = catering;
+    cateraarObject.Stad = stad;
+    cateraarObject.Id = id;
+    var cateraarJSON = JSON.stringify(cateraarObject);
+    cateraars.push(cateraarObject);
+    localStorage.setItem("opgeslagenCat",cateraarJSON);
+    console.log(cateraars);
+}
+var cateraars = []; //NEW
