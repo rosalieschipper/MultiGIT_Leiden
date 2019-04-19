@@ -1,39 +1,22 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="scriptYC.js"></script>
 </head>
 <body onload="startRecencentOverzicht()">
-    <div id="inlog">
-        <input id= "inputnaam" type="text" placeholder="Gebruikersnaam"></input> <!--INLOG NIEUW-->
-        <button onclick=naamOpslaan()> Inloggen </button> <!--INLOG NIEUW-->
+    <!--<div id="inlog">
+        <input id= "inputnaam" type="text" placeholder="Gebruikersnaam"></input>
+        <button onclick=naamOpslaan()> Inloggen </button>
     <br>
-        <div id=uitkomstGebruiker> Gebruikersnaam </div> <!--INLOG NIEUW-->
-        <p><a href="Lunch@LeidseVolkshuis_catering.html">Ga naar pagina voor Catering</a></p>
+        <div id=uitkomstGebruiker> Gebruikersnaam </div> -->
+        <div id="inlog"><p><a href="Lunch@LeidseVolkshuis_cateraar.html">Ga naar pagina voor Cateraar</a></p>
     </div>
     <h1>Lunch @ Leidse Volkshuis</h1>
     <div class="row">
     <div class="column">
         <div id="datumdiv"></div>
             <h2>Beoordeel jouw lunch</h2>	
-            <p>Details lunch</p>
-            <!--<form target="_self">
-                Cateraar: <span id="cateraar" class="beoordeelformulier"></span>
-            <br>
-                Aantal broodjes: <span class="beoordeelformulier" id="aantalBroodjes"></span>
-            <br>
-                Beleg: <span  class="beoordeelformulier" id="soortBeleg"></span>
-            <br>
-                Drankjes: <span class="beoordeelformulier" id="dranken"></span>
-            <br>
-                Type bestek: <span class="beoordeelformulier" id="typeBestek"></span>
-            <br>
-                Extra's: <span class="beoordeelformulier" id="extra"></span>
-            <br>
-                Datum: <span class="beoordeelformulier" id="datum"></span>
-            <br><br>
-            </form>-->
-            
+            <p>Details lunch (selecteer een lunch in 'het lunch overzicht)</p>           
             <p>
                 <table>
                     <tr>
@@ -62,16 +45,12 @@
                     </tr>
                 </table>
             </p>
-
-            <button id="blabla" onclick="etenophalen()">Toon menu</button>
-            <table id="deLunch"></table>
         <div class="row">
             <div class="column"><input id="inputfoto" type="file" accept="image/*" onchange="previewLunchFoto(event)">
             <img id="output_image"/></div>
             <div class="column">Commentaar<br/>
                 <textarea rows=15 cols=35 id="commentaar"></textarea></div>
         </div>        
-
         <p>Cijfer:
         <select id="cijfer">
             <option value="1">1</option>
@@ -90,24 +69,17 @@
         <button onclick="beoordeel()">Opslaan</button>
 
     <br>
-    <div id="uitkomst" > </div>
+    <div id="uitkomst"> </div>
         </div>
             <div class="column">
-                <h2>Weekoverzicht</h2>
-                <table id="weekoverzicht">
+                <h2>Het lunch overzicht</h2>
+                <table>
                     <tr>
+                        <th>Cateraar</th>
                         <th>Datum</th>
-                        <th>Weekdag</th>
-                        <th>Beoordeling</th>
-                    </tr>
-                    <tr>
-                        <td>15-04-2019</td>
-                        <td>maandag</td>
-                        <td>GEMIDDELD</td>
                     </tr>
                 </table>
-            <br>
-            <button onclick="array()">Klik</button>
+                <table id="deLunch"></table>     
         </div>
     </div>
 </body>

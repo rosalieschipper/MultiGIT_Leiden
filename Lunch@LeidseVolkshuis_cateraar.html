@@ -1,15 +1,15 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="scriptYC.js"></script>
 </head>
 <body onload="startCateraarOverzicht()">
-    <div id="inlog">
-        <input id="inputnaam" type="text" placeholder="Naam catering"></input> <!--INLOG NIEUW-->
-        <button onclick=naamOpslaan()> Inloggen </button> <!--INLOG NIEUW-->
+    <!--<div id="inlog">
+        <input id="inputnaam" type="text" placeholder="Naam catering"></input>
+        <button onclick=naamOpslaan()> Inloggen </button> 
     <br>
-        <div id="uitkomstGebruiker"> Naam catering </div> <!--INLOG NIEUW-->
-        <p><a href="Lunch@LeidseVolkshuis_recensent.html">Ga naar pagina voor recensenten</a></p>
+        <div id="uitkomstGebruiker"> Naam catering </div> -->
+        <div id="inlog"><p><a href="Lunch@LeidseVolkshuis_recensent.html">Ga naar pagina voor recensenten</a></p>
     </div>
     <h1>Lunch @ Leidse Volkshuis</h1>
     <div class="row">
@@ -45,22 +45,14 @@
                 </form>
         </div>
         <div class="column">
-            <table id="weekoverzicht">
-                <h2>Weekoverzicht</h2>
-                <tr>
-                    <th>Datum</th>
-                    <th>Weekdag</th>
-                    <th>Beoordeling</th>
-                </tr>
-                <tr>
-                    <td>15-04-2019</td>
-                    <td>maandag</td>
-                    <td>GEMIDDELD</td>
-                    </tr>
+                <h2>Het lunch overzicht</h2>
+                <table>
+                        <tr>
+                                <th>Cateraar</th>
+                                <th>Datum</th>
+                        </tr>
                 </table>
-        <br>
-            <button onclick="array()">Klik</button>
-            <table id="deLunch">?</table>
+                <table id="deLunch"></table>
         </div>
     </div>
 </body>
