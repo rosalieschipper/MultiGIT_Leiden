@@ -21,13 +21,9 @@ window.onload = function(){
 }
 */
 function startCateraarOverzicht(){
- //   gezamelijkePaginaStart();
- //   alert("in startCateraar");
     vulCateraarDropDown();
-   // alert();
     lala();
    maaltijden = JSON.parse(localStorage.getItem("maaltijdenarray"));
-  //  document.getElementById("deLunch").innerHTML = tabelmaaltijdenmaken(y);
 }
 
 function vulCateraarDropDown(){
@@ -38,10 +34,6 @@ function vulCateraarDropDown(){
         eindString += "<option>"+ cateraarsObject[x].Naam +"</option>";
     }
     document.getElementById("lunchMan").innerHTML = eindString;
-
-
-
-
 }
 
 function startRecencentOverzicht(){
@@ -53,35 +45,6 @@ function startRecencentOverzicht(){
     lala();
     maaltijden = JSON.parse(localStorage.getItem("maaltijdenarray"));
 }
-
-/*function etenladen(){
-    var dag1 = {
-        naamcateraar: document.getElementById("cateraar").value,
-        aantalbroodjes: document.getElementById("aantalBroodjes").value,
-        soortbeleg: document.getElementById("soortBeleg").value,
-        drank: document.getElementById("dranken").value,
-        bestek: document.getElementById("typeBestek").value,
-        extra: document.getElementById("extra").value,
-        datum: document.getElementById("datum").value
-    }
-    //alert(dag1.naamcateraar);
-    maaltijden.push(dag1);
-    console.log(maaltijden);
-    var eindString = "";
-    for(var x = 0; x < maaltijden.length; x ++){
-        eindString += "<tr><td>" + maaltijden[x].naamcateraar + "</td><td>" + 
-                            maaltijden[x].aantalbroodjes + "</td><td>" + 
-                            maaltijden[x].soortbeleg + "</td><td>" + 
-                            maaltijden[x].drank + "</td><td>" + 
-                            maaltijden[x].bestek + "</td><td>" + 
-                            maaltijden[x].extra + "</td><td>" + 
-                            maaltijden[x].datum + "</td></tr>";
-    }
-    document.getElementById("deLunch").innerHTML = eindString;
-    //alert("string: " + eindString);
-    var maaltijdenjson = JSON.stringify(maaltijden);
-    localStorage.setItem('maaltijdenarray', maaltijdenjson);
-}*/
 
 function inputeten(){
     var dag1 = {
@@ -122,45 +85,7 @@ function etenophalen(){
     document.getElementById("deLunch").innerHTML = tabelmaaltijdenmaken(maaltijden);
 }
 
-
 var maaltijden = [];
-
-function deMaaltijd(){
-        var lunch1 = {
-            datum : "15-04-2019",
-            weekdag : "Maandag",
-            beoordeling : "7"
-        };
-        var lunch2 = {
-            datum : "16-04-2019",
-            weekdag : "Dinsdag",
-            beoordeling : "4"
-        };
-        var lunch3 = {
-            datum : "17-04-2019",
-            weekdag : "Woensdag",
-            beoordeling : "6"
-        };
-        var maaltijden = [lunch1, lunch2, lunch3];
-            return maaltijden;
-        }
-        
-function array(){
-        var lunches = deMaaltijd();
-        var text = "";
-        var y;
-        var table;
-        for(y=0; y<lunches.length; y++){
-            table = document.getElementById("weekoverzicht");
-            var row = table.insertRow(1);
-            var cell1 = row.insertCell(0);
-            cell1.innerHTML = lunches[y].datum; 
-            var cell2 = row.insertCell(-1);
-            cell2.innerHTML = lunches[y].weekdag;
-            var cell3 = row.insertCell(-1);
-            cell3.innerHTML = lunches[y].beoordeling; 
-        }
-    }
 
 function beoordeel(){
     var cijfergeven = document.getElementById("cijfer").value;
@@ -212,3 +137,57 @@ function cateraarInfo(){ //NEW
     console.log(cateraars);
 }
 var cateraars = []; //NEW
+
+function lunchtabellinksinformatie(){
+    /*var lunch = {
+        naamcateraar: document.getElementById("cateraar").value,
+        aantalbroodjes: document.getElementById("aantalBroodjes").value,
+        soortbeleg: document.getElementById("soortBeleg").value,
+        drank: document.getElementById("dranken").value,
+        bestek: document.getElementById("typeBestek").value,
+        extra: document.getElementById("extra").value,
+        datum: document.getElementById("datum").value
+    }*/
+    var lunch1 = {
+        naamcateraar: "Downies & Brownies",
+        aantalbroodjes: 5,        
+        soortbeleg: "kaas",
+        drank: "water",
+        bestek: "hout",
+        extra: "choco",
+        datum: "15-04-2019"
+    }
+    var lunch2 = {
+        naamcateraar: "D&B",
+        aantalbroodjes: 15,        
+        soortbeleg: "ham",
+        drank: "melk",
+        bestek: "plastic",
+        extra: "appel",
+        datum: "18-04-2019"
+    }
+    var lunches = [lunch1, lunch2];
+    return lunches;
+    //var x = document.getElementById("")
+}
+
+function lunchdetailsoproepen(waarde){
+    var lunch = lunchtabellinksinformatie();
+    var text = "";
+    var y;
+    var table;
+    if (waarde == 0){
+        y = 0;
+    }
+    if(waarde == 1){
+        y = 1;
+    }
+    table = document.getElementById("lunchdetails");
+    document.getElementById("cateraarnaam").innerHTML = lunch[y].naamcateraar;
+    document.getElementById("aantalBroodjes").innerHTML = lunch[y].aantalbroodjes;
+    document.getElementById("soortBeleg").innerHTML = lunch[y].soortbeleg;
+    document.getElementById("dranken").innerHTML = lunch[y].drank;
+    document.getElementById("typeBestek").innerHTML = lunch[y].bestek;
+    document.getElementById("extra").innerHTML = lunch[y].extra;
+    document.getElementById("datum").innerHTML = lunch[y].datum;
+}
